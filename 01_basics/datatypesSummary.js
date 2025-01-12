@@ -45,3 +45,26 @@ console.log(typeof myFunction); //function
 
 // JavaScript is a dynamically typed programming language. This means that variables in JavaScript do not have a fixed type. The type of a variable is determined at runtime based on the value assigned to it. In contrast, statically typed languages like Java or TypeScript require variables to have a specific type declared at compile time, and this type cannot change.
 
+//++++++++++++++++++++++++++++++++++++++++++
+//Memory in JS
+// stack (primitive datatypes)  we will get copy so whatever we change it change in copy
+// Heap (Non primitive) // we will get refrence it will change directly the ref
+
+let myytName = "kpyoutube";
+let anotherytName = myytName;
+anotherytName = "newytname";
+console.log(anotherytName); //"newytname"
+console.log(myytName);  // "kpyoutube" // it is not taking  "newytname" because it use copy 
+
+
+// Heap Memeory 
+//here the refrence for userOne and UserTwo is the same while in case of stack memeory it will provide copy 
+let userOne = {
+    name: "hitesh",
+    age: 22,
+}
+
+let userTwo = userOne;
+userTwo.age =  24;
+console.log(userTwo.age) //24
+console.log(userOne.age) //24
