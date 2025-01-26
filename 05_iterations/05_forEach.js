@@ -27,9 +27,10 @@ const coding = ["js", "ruby", "java", "python", "cpp"]
 // coding.forEach(printMe)
 
 //forEach fun can take three argument : current value  (item), index , array
-coding.forEach( (item, index, arr)=> {
+
+// coding.forEach( (item, index, arr)=> {
     // console.log(item, index, arr);
-} )
+// } )
 
 
 const myCoding = [
@@ -48,5 +49,12 @@ const myCoding = [
 ]
 
 myCoding.forEach( (item) => {
-    console.log(item.languageName);
+    // console.log(item.languageName);
 } )
+
+// For each by dont return any thing even we define return 
+const values = coding.forEach( (item)=> {
+    // console.log(item)
+    return item   // For each by default dont return any thing we need to define return 
+})
+console.log(values); //undefined
