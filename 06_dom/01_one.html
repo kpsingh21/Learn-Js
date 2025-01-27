@@ -10,25 +10,28 @@
 
 //document.getElementById('title').innerHTML = "chai or code"
 
---> 
+-->
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    
+
     <title>DOM learning</title>
     <style>
-        .bg-black{
+        .bg-black {
             background-color: #212121;
             color: #fff;
         }
     </style>
+    
 </head>
+
 <body class="bg-black">
-    <div >
-        <h1  id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
+    <div>
+        <h1 id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
         <h2>Lorem ipsum dolor sit.</h2>
         <h2>Lorem ipsum dolor sit.</h2>
         <h2>Lorem ipsum dolor sit.</h2>
@@ -43,4 +46,43 @@
         </ul>
     </div>
 </body>
+
+<script>
+    //selector
+    const element = document.getElementById("title");
+    const element2 = document.getElementsByClassName('list-item')//return HTMLCollection it dont have forEach
+    //so first we need to covert it to Array using Array.from()
+    myconvertedarray = Array.from(element2) //now we can use foreach
+    //querySelector
+    const query1 = document.querySelector('h1') //gives first h1
+    const query2 = document.querySelector('#title') //using id
+    const query22 = document.querySelector('.classname') //using name of the class
+
+    const query3 = document.querySelector('input[type="password"]') //using html-css selector
+    //querySelectorAll - it will give you NodeList
+    //NodeList and HTMLCollection are not pure array
+    const tempList = document.querySelectorAll('li')
+    tempList[0].style.color = "green"
+    //forEach available for NodeList
+    tempList.forEach(function (l) {
+        l.style.backgroundColor = 'green'
+    })
+
+    //attributes
+    const id = document.getElementById("title").id;
+    const className = document.getElementById("title").className;
+    const attID = document.getElementById("title").getAttribute('id');
+    const attClass = document.getElementById("title").getAttribute('class');
+    //set attribute
+    document.getElementById("id").setAttribute('class', 'test')
+    //if you want previous class also then we need to mention that also
+    document.getElementById("id").setAttribute('class', "newclass prevclass")
+    //set style
+    element.style.backgroundColor = "green"
+    //text content
+    element.textContent //it will give all content dispite of display style
+    element.innerHTML // it will provide content with inner HTML also
+    element.innerText // innerText will provide you only the content that is visible in page i,e display is not none 
+</script>
+
 </html>
