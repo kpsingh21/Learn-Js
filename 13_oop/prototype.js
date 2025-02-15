@@ -79,3 +79,44 @@ The constructor is called: The constructor function is called with the specified
 The new object is returned: After the constructor function has been called, if it doesn't return a non-primitive value (object, array, function, etc.), the newly created object is returned.
 
 */
+
+
+// 🔹 A constructor function is just a regular function that initializes new objects when used with new.
+
+// More on Prototype:
+
+let myName = "kp"  //2
+let myName2 = "kp   " //5
+console.log(myName2.length) //5
+
+//I want to achieve trim value without using trim function
+// console.log(myName2.trim().length) //2
+//like this
+// console.log(myName.trueLength);
+
+
+let myHeros = ["thor", "spiderman"]
+
+let heroPower = {
+    thor: "hammer",
+    spiderman: "sling",
+    getSpiderPower: function(){
+        console.log(`Spidy power is ${this.spiderman}`);
+    }
+}
+
+Object.prototype.myfun = function(){
+    console.log(`myfun is present in all objects`);
+}
+
+heroPower.myfun();
+
+// as Array is also an object so this 'myfun' should be present in the array also.
+myHeros.myfun(); // so this myfun is crated for object so available for arrays also
+
+// but is it vice versa also true no , fun created for Array is availabel for objects or not ?
+Array.prototype.myfun2 = function(){
+    console.log(`myfun2 is available for Arrays`)
+}
+myHeros.myfun2();  //available for Arrays
+// heroPower.myfun2();  // not available 
